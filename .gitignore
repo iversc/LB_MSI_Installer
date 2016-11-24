@@ -1,0 +1,6 @@
+ExampleFiles/
+ProgFiles/
+wixobj/
+installer/
+lb450ExampleFiles.wxs
+lb450ProgFiles.wxs

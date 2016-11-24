@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Include>
+  <?define ProgFilesDir="ProgFiles" ?>
+  <?define ExampleFilesDir="ExampleFiles" ?>
+  <?define ProductCode="{576ba18f-56ec-4c61-9e68-a8b63334113d}"?>
+  <?define ProductUpgradeCode="{8715082a-03ce-491a-b586-b6c5f5cb4d1d}"?>
+  <?define LauncherComponentGUID="{b275b0a3-6aae-4189-9d88-d610b2a53481}"?>
+  <?define ProgramMenuComponentGUID="{1f2a512a-d6e8-4876-b81a-89e7f052784f}"?>
+</Include>
