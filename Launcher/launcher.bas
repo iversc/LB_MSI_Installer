@@ -74,17 +74,17 @@ end if
 'However, manually running it incorrectly is better than it not running
 'at all.  We fall back on it if ShellExecute() fails.
 
-if (ShellExecute("liberty.exe") < 33) then run "liberty.exe"
+if (ShellExecute("liberty.exe", CommandLine$) < 33) then run "liberty.exe "+CommandLine$
 
 
 end
 
-Function ShellExecute(lpFile$)
+Function ShellExecute(lpFile$, lpParameters$)
     CallDLL #shell32, "ShellExecuteA",_
     0 as ulong,_
     0 as ulong,_
     lpFile$ as ptr,_
-    0 as ulong,_
+    lpParameters$ as ptr,_
     0 as ulong,_
     _SW_SHOWNORMAL as long,_
     ShellExecute as long

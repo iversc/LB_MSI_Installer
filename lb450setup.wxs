@@ -17,7 +17,7 @@
 
 		<Directory Id='TARGETDIR' Name='SourceDir'>	  
 			<Directory Id="ProgramFilesFolder">
-				<Directory Id='LBProgFiles' Name="Liberty BASIC v4.5.0 Test">
+				<Directory Id='LBPROGFILES' Name="Liberty BASIC v4.5.0 Test">
 					<Component Id='Launcher' Guid='$(var.LauncherComponentGUID)'>
 						<File Id='launcher.exe' KeyPath='yes' Source='Launcher\launcher.exe'>
 							<Shortcut Id='startmenuFoobar10' Directory='ProgramMenuDir' Name='Liberty BASIC v4.5.0 Test'
@@ -50,7 +50,8 @@
 			<Directory Id='DesktopFolder' Name='Desktop' />
 		</Directory>
 
-		<Feature Id='Complete' Level='1'>
+		<Feature Id='Complete' Level='1' Title="Liberty BASIC v4.5.0" Description="Complete LB v4.5.0 install"
+                 ConfigurableDirectory="LBPROGFILES">
 			<ComponentGroupRef Id='LBv450ProgFiles' />
 			<ComponentRef Id='ProgramMenuComponent' />
 			<ComponentGroupRef Id='LBv450ExampleFiles' />
@@ -59,6 +60,11 @@
 
 		<Icon Id='liberty.exe' SourceFile='ProgFiles\liberty.exe' />
 		<Property Id="ARPPRODUCTICON" Value="liberty.exe" />
-		
+        <Property Id="WIXUI_INSTALLDIR" Value="LBPROGFILES" />
+        <WixVariable Id="WixUILicenseRtf" Value="LB-license.rtf" />
+
+        <UIRef Id="WixUI_InstallDir" />
+        <UIRef Id="WixUI_ErrorProgressText" />
+    
 	</Product>
 </Wix>
